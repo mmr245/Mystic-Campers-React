@@ -30,13 +30,13 @@ This SPA is a complete reimagining of the original Mystic Campers website using 
 - **User account** pages (profile, registration, order history)
 - **Contact form** with validation
 - **About/team/lore** informational sections
-- **Mini-games, scavenger hunt, and blog** under "The Hunt"
+- **Mini-game(hangman), scavenger hunt, and blog** under "The Hunt"
 - **CSS modules** for scoped, maintainable styling
 
 ---
 
 ## Tech Stack
-
+ 
 - [React](https://react.dev/) (with [TypeScript](https://www.typescriptlang.org/))
 - [React Router](https://reactrouter.com/) (for SPA navigation)
 - [CSS Modules](https://github.com/css-modules/css-modules)
@@ -68,40 +68,55 @@ src/
 ├── routes.tsx
 └── tsconfig.json
 
-Setup & Installation
+## Setup & Installation
 
-Clone the repository:
 
-   bash
+---
+
+## Setup & Installation
+
+1. **Clone the repository:**
+
+    ```bash
     git clone https://github.com/YOUR-USERNAME/mystic-campers.git
     cd mystic-campers
-    
-Install dependencies:
+    ```
 
-   bash
+2. **Install dependencies:**
+
+    ```bash
     npm install
-or, if using yarn
+    # or, if using yarn
     yarn install
-    
-Start the development server:
+    ```
 
-   bash
+3. **Start the development server:**
+
+    ```bash
     npm start
-Open http://localhost:3000 to view in your browser.
+    # or
+    yarn start
+    ```
 
-Available Scripts
+4. Open [http://localhost:3000](http://localhost:3000) to view in your browser.
 
-npm start — Runs the app in development mode.
-npm run build — Builds the app for production.
-npm test — Launches the test runner.
-npm run lint — Runs linter (if configured).
-npm run format — Formats code (if Prettier is configured).
+---
 
-Contributing
+## Available Scripts
 
-Fork the repo and create your feature branch (git checkout -b feature/YourFeature).
-Commit your changes (git commit -am 'Add some feature').
-Push to the branch (git push origin feature/YourFeature).
-Open a Pull Request describing your changes.
+- `npm start` — Runs the app in development mode.
+- `npm run build` — Builds the app for production.
+- `npm test` — Launches the test runner.
+- `npm run lint` — Runs linter (if configured).
+- `npm run format` — Formats code (if Prettier is configured).
+
+---
+
+## Contributing
+
+1. **Fork** the repo and create your feature branch (`git checkout -b feature/YourFeature`).
+2. **Commit your changes** (`git commit -am 'Add some feature'`).
+3. **Push to the branch** (`git push origin feature/YourFeature`).
+4. **Open a Pull Request** describing your changes.
 
 Please follow the existing folder structure and naming conventions. All major changes should be discussed in advance.
