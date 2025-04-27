@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import CartSummary from '../components/Cart/CartSummary';
-import CartList    from '../components/Cart/CartList';
+import CartSummary from '../components/Cart/CartSummary.jsx';
+import CartList    from '../components/Cart/CartList.jsx';
 
 export default function CartPage() {
   const [items, setItems] = useState([]);

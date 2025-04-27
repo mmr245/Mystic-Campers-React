@@ -21,8 +21,6 @@ function App() {
           {/* …other routes… */}
           <Route path="/cart" element={<CartPage />} />
         </Routes>
-      <h1>Welcome to Mystic Campers</h1>
-      <p>Explore the unknown with our top-tier camping gear!</p>
     </Layout>
   );
 }
