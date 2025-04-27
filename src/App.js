@@ -19,7 +19,9 @@ function App() {
     <Layout>
       {/* TODO: Replace with your routes or page components */}
       <h1>Welcome to Mystic Campers</h1>
-      <p>Explore the unknown with our top-tier camping gear.</p>
+      <p>Explore the unknown with our top-tier camping gear
+        Hi
+      </p>
     </Layout>
   );
 }

@@ -1,11 +1,17 @@
 // src/components/Layout/Header.jsx
 import React from 'react';
+import desktopLogo from '../../assets/images/top-logo.png';
+import mobileLogo from '../../assets/images/mobile-logo.png';
 import './Layout.css';
 
 const Header = () => (
   <header className="site-header">
     <div className="header-top">
-      <img className="logo" src="/images/top-logo.png" alt="Mystic Campers Logo" />
+      {/* Desktop logo hidden on small screens */}
+      <img className="logo desktop-logo" src={desktopLogo} alt="Mystic Campers Logo" />
+      {/* Mobile logo shown on small screens */}
+      <img className="logo mobile-logo" src={mobileLogo} alt="Mystic Campers" />
+      {/* Branding only visible on mobile */}
       <div className="branding">
         <h1>Mystic Campers</h1>
         <h3>Where the wild meets the weird.</h3>
