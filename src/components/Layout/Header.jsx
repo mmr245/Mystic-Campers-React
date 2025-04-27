@@ -2,6 +2,7 @@
 import React from 'react';
 import desktopLogo from '../../assets/images/top-logo.png';
 import mobileLogo from '../../assets/images/mobile-logo.png';
+import { NavLink } from 'react-router-dom';
 import './Layout.css';
 
 const Header = () => (
@@ -28,7 +29,11 @@ const Header = () => (
         <li><a href="/the-hunt">The Hunt</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/account">Account</a></li>
-        <li><a href="/cart">Cart</a></li>
+        <li>
+          <NavLink to="/cart" className={({ isActive }) => isActive ? 'active' : ''}>
+            Cart
+          </NavLink>
+        </li>
       </ul>
     </nav>
   </header>

@@ -11,17 +11,18 @@ import About from './pages/AboutPage';
 import Hunt from './pages/HuntPage';
 import Contact from './pages/ContactPage';
 import Account from './pages/AccountPage';
-import Cart from './pages/CartPage';
+import CartPage from './pages/CartPage';
 import NotFound from './pages/NotFoundPage';
 
 function App() {
   return (
     <Layout>
-      {/* TODO: Replace with your routes or page components */}
+      <Routes>
+          {/* …other routes… */}
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
       <h1>Welcome to Mystic Campers</h1>
-      <p>Explore the unknown with our top-tier camping gear
-        Hi
-      </p>
+      <p>Explore the unknown with our top-tier camping gear!</p>
     </Layout>
   );
 }
