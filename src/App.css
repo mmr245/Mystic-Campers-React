@@ -1,12 +1,69 @@
-html, body {
+/* Global settings */
+:root {
+  /* Color palette */
+  --bg-color: #1d2429;
+  --text-color: #f5f5f5;
+  --accent-color: #b8a454;
+
+  /* Fluid type bounds */
+  --min-font: 0.875rem;
+  --max-font: 1.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #1d2429;
-  color: #f5f5f5;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  min-width: 325px; /* prevent overly small viewports */
+}
+
+/* Fluid typography */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+h2 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+p,
+a,
+button {
+  font-size: clamp(var(--min-font), 2.5vw, var(--max-font));
+}
+
+/* Utility classes */
+.accent-divider {
+  border-top: 2px solid var(--accent-color);
+  margin: 2rem 0;
+}
+
+.hidden {
+  display: none !important;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /**
-This was the built defaults I believe we can DELETE this
+This was the built defaults I believe we can DELETE this - Aj
 .App {
   text-align: center;
 }
