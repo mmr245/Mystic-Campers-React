@@ -15,80 +15,80 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ---
 
 ## Folder Structure
-src/
-├── assets/
-│   └── images/                 # all banner, catalog, icon assets
-├── components/
-│   ├── Layout/
-│   │   ├── Header.tsx
-│   │   ├── NavBar.tsx
-│   │   └── Footer.tsx
-│   ├── Home/
-│   │   ├── BannerCarousel.tsx
-│   │   └── FeaturedProducts.tsx
-│   ├── Products/
-│   │   ├── FilterPanel.tsx
-│   │   ├── ProductCard.tsx
-│   │   └── ProductGrid.tsx
-│   ├── Categories/
-│   │   └── CategoryList.tsx
-│   ├── Cart/
-│   │   ├── CartItem.tsx
-│   │   └── CartSummary.tsx
-│   ├── Account/
-│   │   ├── AccountNav.tsx
-│   │   ├── ProfileForm.tsx
-│   │   ├── RegisterForm.tsx
-│   │   ├── SettingsForm.tsx
-│   │   └── OrderHistory.tsx
-│   ├── Contact/
-│   │   └── ContactForm.tsx
-│   ├── About/
-│   │   ├── AboutUs.tsx
-│   │   ├── Team.tsx
-│   │   └── Lore.tsx
-│   └── Hunt/
-│       ├── HuntOverview.tsx
-│       ├── BlogList.tsx
-│       ├── BlogPost.tsx
-│       ├── ScavengerHunt.tsx
-│       └── GameComponent.tsx    # wraps game.ts logic
-├── pages/
-│   ├── HomePage.tsx
-│   ├── ShopPage.tsx
-│   ├── ProductPage.tsx           # dynamic via product ID
-│   ├── CategoriesPage.tsx
-│   ├── CartPage.tsx
-│   ├── ContactPage.tsx
-│   ├── Account/
-│   │   ├── AccountPage.tsx
-│   │   ├── ProfilePage.tsx
-│   │   ├── RegisterPage.tsx
-│   │   ├── SettingsPage.tsx
-│   │   └── OrderHistoryPage.tsx
-│   ├── About/
-│   │   ├── AboutUsPage.tsx
-│   │   ├── TeamPage.tsx
-│   │   └── LorePage.tsx
-│   └── TheHunt/
-│       ├── TheHuntPage.tsx
-│       ├── BlogPage.tsx
-│       ├── GamePage.tsx
-│       └── ScavengerHuntPage.tsx
-├── context/
-│   ├── CartContext.tsx
-│   └── AuthContext.tsx
-├── hooks/
-│   ├── useProducts.ts
-│   ├── useCart.ts
-│   ├── useAuth.ts
-│   └── useGame.ts               # encapsulate game state & logic
-├── data/
-│   └── products.json            # migration of the JS product array here
-├── App.tsx
-├── index.tsx
-├── routes.tsx                  
-└── tsconfig.json
+- src/
+- ├── assets/
+- │   └── images/                 # all banner, catalog, icon assets
+- ├── components/
+- │   ├── Layout/
+- │   │   ├── Header.tsx
+- │   │   ├── NavBar.tsx
+- │   │   └── Footer.tsx
+- │   ├── Home/
+- │   │   ├── BannerCarousel.tsx
+- │   │   └── FeaturedProducts.tsx
+- │   ├── Products/
+- │   │   ├── FilterPanel.tsx
+- │   │   ├── ProductCard.tsx
+- │   │   └── ProductGrid.tsx
+- │   ├── Categories/
+- │   │   └── CategoryList.tsx
+- │   ├── Cart/
+- │   │   ├── CartItem.tsx
+- │   │   └── CartSummary.tsx
+- │   ├── Account/
+- │   │   ├── AccountNav.tsx
+- │   │   ├── ProfileForm.tsx
+- │   │   ├── RegisterForm.tsx
+- │   │   ├── SettingsForm.tsx
+- │   │   └── OrderHistory.tsx
+- │   ├── Contact/
+- │   │   └── ContactForm.tsx
+- │   ├── About/
+- │   │   ├── AboutUs.tsx
+- │   │   ├── Team.tsx
+- |   │   └── Lore.tsx
+- │   └── Hunt/
+- │       ├── HuntOverview.tsx
+- │       ├── BlogList.tsx
+- │       ├── BlogPost.tsx
+- │       ├── ScavengerHunt.tsx
+- │       └── GameComponent.tsx    # wraps game.ts logic
+- ├── pages/
+- │   ├── HomePage.tsx
+- │   ├── ShopPage.tsx
+- │   ├── ProductPage.tsx           # dynamic via product ID
+- │   ├── CategoriesPage.tsx
+- │   ├── CartPage.tsx
+- │   ├── ContactPage.tsx
+- │   ├── Account/
+- │   │   ├── AccountPage.tsx
+- │   │   ├── ProfilePage.tsx
+- │   │   ├── RegisterPage.tsx
+- │   │   ├── SettingsPage.tsx
+- │   │   └── OrderHistoryPage.tsx
+- │   ├── About/
+- │   │   ├── AboutUsPage.tsx
+- │   │   ├── TeamPage.tsx
+- │   │   └── LorePage.tsx
+- │   └── TheHunt/
+- │       ├── TheHuntPage.tsx
+- │       ├── BlogPage.tsx
+- │       ├── GamePage.tsx
+- │       └── ScavengerHuntPage.tsx
+- ├── context/
+- │   ├── CartContext.tsx
+- │   └── AuthContext.tsx
+- ├── hooks/
+- │   ├── useProducts.ts
+- │   ├── useCart.ts
+- │   ├── useAuth.ts
+- │   └── useGame.ts               # encapsulate game state & logic
+- ├── data/
+- │   └── products.json            # migration of the JS product array here
+- ├── App.tsx
+- ├── index.tsx
+- ├── routes.tsx                  
+- └── tsconfig.json
 
 ## Available Scripts
 
