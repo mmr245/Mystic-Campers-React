@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
 import React from 'react';
+import Layout from './components/Layout/Layout';
+
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import Home from './pages/Home';
@@ -15,19 +16,11 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/hunt" element={<Hunt />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
+    <Layout>
+      {/* TODO: Replace with your routes or page components */}
+      <h1>Welcome to Mystic Campers</h1>
+      <p>Explore the unknown with our top-tier camping gear.</p>
+    </Layout>
   );
 }
 
