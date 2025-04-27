@@ -48,24 +48,77 @@ This SPA is a complete reimagining of the original Mystic Campers website using 
 ## Folder Structure
 src/
 ├── assets/
-│   └── images/
+│   └── images/                 # all banner, catalog, icon assets
 ├── components/
-│   ├── Layout/          # Header, NavBar, Footer
-│   ├── Home/            # BannerCarousel, FeaturedProducts
-│   ├── Products/        # ProductGrid, ProductCard, FilterPanel
-│   ├── Categories/      # CategoryList
-│   ├── Cart/            # CartItem, CartSummary
-│   ├── Account/         # AccountNav, ProfileForm, etc.
-│   ├── Contact/         # ContactForm
-│   ├── About/           # AboutUs, Team, Lore
-│   └── Hunt/            # HuntOverview, GameComponent, etc.
-├── pages/               # Top-level page components
-├── context/             # App-level context providers (e.g. Cart, Auth)
-├── hooks/               # Custom React hooks
-├── data/                # Static data (e.g. products.json)
+│   ├── Layout/
+│   │   ├── Header.tsx
+│   │   ├── NavBar.tsx
+│   │   └── Footer.tsx
+│   ├── Home/
+│   │   ├── BannerCarousel.tsx
+│   │   └── FeaturedProducts.tsx
+│   ├── Products/
+│   │   ├── FilterPanel.tsx
+│   │   ├── ProductCard.tsx
+│   │   └── ProductGrid.tsx
+│   ├── Categories/
+│   │   └── CategoryList.tsx
+│   ├── Cart/
+│   │   ├── CartItem.tsx
+│   │   └── CartSummary.tsx
+│   ├── Account/
+│   │   ├── AccountNav.tsx
+│   │   ├── ProfileForm.tsx
+│   │   ├── RegisterForm.tsx
+│   │   ├── SettingsForm.tsx
+│   │   └── OrderHistory.tsx
+│   ├── Contact/
+│   │   └── ContactForm.tsx
+│   ├── About/
+│   │   ├── AboutUs.tsx
+│   │   ├── Team.tsx
+│   │   └── Lore.tsx
+│   └── Hunt/
+│       ├── HuntOverview.tsx
+│       ├── BlogList.tsx
+│       ├── BlogPost.tsx
+│       ├── ScavengerHunt.tsx
+│       └── GameComponent.tsx    # wraps game.ts logic
+├── pages/
+│   ├── HomePage.tsx
+│   ├── ShopPage.tsx
+│   ├── ProductPage.tsx           # dynamic via product ID
+│   ├── CategoriesPage.tsx
+│   ├── CartPage.tsx
+│   ├── ContactPage.tsx
+│   ├── Account/
+│   │   ├── AccountPage.tsx
+│   │   ├── ProfilePage.tsx
+│   │   ├── RegisterPage.tsx
+│   │   ├── SettingsPage.tsx
+│   │   └── OrderHistoryPage.tsx
+│   ├── About/
+│   │   ├── AboutUsPage.tsx
+│   │   ├── TeamPage.tsx
+│   │   └── LorePage.tsx
+│   └── TheHunt/
+│       ├── TheHuntPage.tsx
+│       ├── BlogPage.tsx
+│       ├── GamePage.tsx
+│       └── ScavengerHuntPage.tsx
+├── context/
+│   ├── CartContext.tsx
+│   └── AuthContext.tsx
+├── hooks/
+│   ├── useProducts.ts
+│   ├── useCart.ts
+│   ├── useAuth.ts
+│   └── useGame.ts               # encapsulate game state & logic
+├── data/
+│   └── products.json            # migration of the JS product array here
 ├── App.tsx
 ├── index.tsx
-├── routes.tsx
+├── routes.tsx                  
 └── tsconfig.json
 
 ## Setup & Installation
