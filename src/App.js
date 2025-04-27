@@ -5,14 +5,14 @@ import Layout from './components/Layout/Layout';
 
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import About from './pages/About';
-import Hunt from './pages/Hunt';
-import Contact from './pages/Contact';
-import Account from './pages/Account';
-import Cart from './pages/Cart';
-import NotFound from './pages/NotFound';
+import Home from './pages/HomePage';
+import Shop from './pages/ShopPage';
+import About from './pages/AboutPage';
+import Hunt from './pages/HuntPage';
+import Contact from './pages/ContactPage';
+import Account from './pages/AccountPage';
+import Cart from './pages/CartPage';
+import NotFound from './pages/NotFoundPage';
 
 function App() {
   return (
