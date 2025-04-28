@@ -11,16 +11,16 @@ import About from './pages/AboutPage';
 import Hunt from './pages/HuntPage';
 import Contact from './pages/ContactPage';
 import Account from './pages/AccountPage';
-import CartPage from './pages/CartPage';
+
 import NotFound from './pages/NotFoundPage';
 
 function App() {
   return (
     <Layout>
       <Routes>
-          {/* …other routes… */}
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/hunt" element={<Hunt />} />
+      </Routes>
     </Layout>
   );
 }

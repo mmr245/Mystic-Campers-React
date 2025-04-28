@@ -25,8 +25,8 @@ const Header = () => (
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/shop">Shop</a></li>
-        <li><a href="/about-us">About Us</a></li>
-        <li><a href="/the-hunt">The Hunt</a></li>
+        <li><NavLink to="/about">About Us</NavLink></li>
+        <li><NavLink to="/hunt">The Hunt</NavLink></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/account">Account</a></li>
         <li>
