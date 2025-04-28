@@ -11,7 +11,7 @@ import About from './pages/AboutPage';
 import Hunt from './pages/HuntPage';
 import Contact from './pages/ContactPage';
 import Account from './pages/AccountPage';
-
+import Cart from './pages/CartPage';
 import NotFound from './pages/NotFoundPage';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/hunt" element={<Hunt />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Layout>
   );
