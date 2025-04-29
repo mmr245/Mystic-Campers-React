@@ -62,6 +62,74 @@ button {
   white-space: nowrap;
 }
 
+/* ------------ Rows ------------- */
+.row {
+  /* Styles The Hunt, Scavenger Hunt, Blog Article rows */
+  display: block;
+}
+
+/* ---------- About Us  ---------- */
+#aboutgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.about {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #B8A454;
+  border-radius: 50%;
+}
+
+.about h2 {
+  text-align: center;
+}
+
+.about p {
+  overflow-wrap: break-word;
+  /* Ensures long words break to fit the container */
+  word-wrap: break-word;
+  /* Fallback for older browsers */
+}
+
+.about figure {
+  margin: 0;
+}
+
+/* unvisited link */
+#aboutgrid a:link {
+  color: #fff;
+}
+
+/* visited link */
+#aboutgrid a:visited {
+  color: #77a290;
+}
+
+/* mouse over link */
+#aboutgrid a:hover {
+  color: #fdd059;
+}
+
+/* selected link */
+#aboutgrid a:active {
+  color: #fdd059;
+}
+
+
+
 /**
 This was the built defaults I believe we can DELETE this - Aj
 .App {
