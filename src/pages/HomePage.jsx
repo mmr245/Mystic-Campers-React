@@ -1,6 +1,39 @@
 import BannerCarousel from '../components/Home/BannerCarousel';
 import './Home.css';
 
+// Import only the images for featured products
+import babaYaga from '../../assets/images/catalog_images/baba-yaga-cookset.png';
+import banshee from '../../assets/images/catalog_images/banshee-repel.png';
+import cerberus from '../../assets/images/catalog_images/cerberus-flashlight.png';
+import chup from '../../assets/images/catalog_images/chup-repel.png';
+
+const featuredProducts = [
+  {
+    id: 1,
+    name: 'Baba Yaga Cookset',
+    price: '$45.00',
+    image: babaYaga,
+  },
+  {
+    id: 2,
+    name: 'Banshee Reppel',
+    price: '$24.00',
+    image: banshee,
+  },
+  {
+    id: 3,
+    name: 'Cerberus Flashlight',
+    price: '$35.00',
+    image: cerberus,
+  },
+  {
+    id: 4,
+    name: 'Chup Reppel',
+    price: '$22.00',
+    image: chup,
+  },
+];
+
 const HomePage = () => {
   return (
     <div className="home-container">
@@ -12,38 +45,17 @@ const HomePage = () => {
         <button className="cta-button">Shop Now</button>
       </section>
 
-      {/* Featured products row */}
+      {/* Featured products */}
       <section className="recommended-section">
         <h2>Our picks for you</h2>
         <div className="product-row">
-          <div className="product-card">
-            <img src="../../assets/images/products/tent.jpg" alt="Mothemans Shadow Spark" />
-            <div className="product-info">
-              <h3>Mothemans Shadow Spark</h3>
-              <p>$15.99</p>
+          {featuredProducts.map((product) => (
+            <div key={product.id} className="product-card">
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>{product.price}</p>
             </div>
-          </div>
-          <div className="product-card">
-            <img src="../../assets/images/products/stove.jpg" alt="Mystic Campfire Cooking Set" />
-            <div className="product-info">
-              <h3>Mystic Campfire Cooking Set</h3>
-              <p>$87.00</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <img src="../../assets/images/products/wraith_cloak.jpg" alt="Shadow Stalker Wraith Cloak" />
-            <div className="product-info">
-              <h3>Shadow Stalker Wraith Cloak</h3>
-              <p>$109.00</p>
-            </div>
-          </div>
-          <div className="product-card">
-            <img src="../../assets/images/products/wall_repel.jpg" alt="Banehoe's Wall Ultrasonic Pest Repleller" />
-            <div className="product-info">
-              <h3>Banehoe's Wall Ultrasonic Pest Repleller</h3>
-              <p>$24.99</p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>
@@ -51,5 +63,6 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
 
 
