@@ -1,1 +1,9 @@
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 400px; /* optional for consistent height */
+  object-fit: cover; /* ensures image covers area without distortion */
+  border-bottom: 5px solid #B8A454; /* style matching your header border */
+}
 
