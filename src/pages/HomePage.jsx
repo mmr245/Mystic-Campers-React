@@ -1,19 +1,18 @@
-
-import React from 'react';
 import BannerCarousel from '../components/Home/BannerCarousel';
-import FeaturedProducts from '../components/Home/FeaturedProducts';
 import './Home.css';
 
 const HomePage = () => {
   return (
     <div className="home-container">
       <BannerCarousel />
-    <div className="home-container">
-      <Banner />
+
+      {/* Welcome message */}
       <section className="welcome-section">
         <h1>Welcome to Mystic Campers</h1>
         <button className="cta-button">Shop Now</button>
       </section>
+
+      {/* Featured products row */}
       <section className="recommended-section">
         <h2>Our picks for you</h2>
         <div className="product-row">
@@ -50,9 +49,7 @@ const HomePage = () => {
     </div>
   );
 };
-    </div>
-  );
-};
 
 export default HomePage;
+
 
