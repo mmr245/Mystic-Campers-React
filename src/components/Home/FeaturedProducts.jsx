@@ -13,7 +13,6 @@ const featuredProducts = [
 
 const FeaturedProducts = () => (
   <div className="featured-products">
-    {/* Removed duplicate h2 here */}
     <div className="product-row">
       {featuredProducts.map((product) => (
         <div key={product.id} className="product-card">
