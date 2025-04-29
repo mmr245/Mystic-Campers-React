@@ -1,12 +1,12 @@
 import React, {useState, useEffect
 } from 'react' ; 
 const banners = [
-  { id: 1, src: '../../assets/images/bigfoot-banner.jpg', alt: 'Bigfoot Banner' },
-  { id: 2, src: '../../assets/images/bigfoot-camp-banner.jpg', alt: 'Bigfoot Camp Banner' },
-  { id: 3, src: '../../assets/images/canoe-banner.jpg', alt: 'Canoe Banner' },
-  { id: 4, src: '../../assets/images/findadventure-banner.jpg', alt: 'Find Adventure Banner' },
-  { id: 5, src: '../../assets/images/notdeer-banner.jpg', alt: 'Not Deer Banner' },
-  { id: 6, src: '../../assets/images/wendingo-banner.jpg', alt: 'Wendingo Banner' },
+  { id: 1, src: '../../assets/images/banner/bigfoot-banner.jpg', alt: 'Bigfoot Banner' },
+  { id: 2, src: '../../assets/images/banner/bigfoot-camp-banner.jpg', alt: 'Bigfoot Camp Banner' },
+  { id: 3, src: '../../assets/images/banner/canoe-banner.jpg', alt: 'Canoe Banner' },
+  { id: 4, src: '../../assets/images/banner/findadventure-banner.jpg', alt: 'Find Adventure Banner' },
+  { id: 5, src: '../../assets/images/banner/notdeer-banner.jpg', alt: 'Not Deer Banner' },
+  { id: 6, src: '../../assets/images/banner/wendingo-banner.jpg', alt: 'Wendingo Banner' },
 ];
 
 const BannerCarousel = () => {
