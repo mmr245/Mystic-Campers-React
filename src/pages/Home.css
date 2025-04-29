@@ -1,1 +1,90 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0dc; /* light background */
+}
+
+/* Banner styling (assuming Banner.jsx is set up) */
+.banner img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Welcome section */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  background-color: #fdd059;
+  color: #1d2429;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cta-button:hover {
+  background-color: #e0b849;
+}
+
+/* Recommended products row */
+.recommended-section {
+  margin-top: 20px;
+}
+
+.recommended-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #333;
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.product-info p {
+  font-size: 1em;
+  color: #fdd059;
+}
 
