@@ -18,38 +18,26 @@ const banners = [
 ];
 
 const BannerCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % banners.length);
+      setIndex(prev => (prev + 1) % banners.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  const goToSlide = (index) => setCurrentIndex(index);
-
   return (
     <div className="banner-carousel">
-      {banners.map((banner, index) => (
+      {banners.map((banner, i) => (
         <div
           key={banner.id}
-          className={`slide ${index === currentIndex ? 'active' : ''}`}
-          style={{ display: index === currentIndex ? 'block' : 'none' }}
+          className={`slide ${i === index ? 'active' : ''}`}
+          style={{ display: i === index ? 'block' : 'none' }}
         >
           <img src={banner.src} alt={banner.alt} />
         </div>
       ))}
-      <div className="dots">
-        {banners.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 };
