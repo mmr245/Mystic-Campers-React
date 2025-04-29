@@ -1,5 +1,5 @@
 import React from 'react';
-// Import your product images
+// Import product images
 import babaYaga from '../../assets/images/catalog_images/baba-yaga-cookset.png';
 import banshee from '../../assets/images/catalog_images/banshee-repel.png';
 import cerberus from '../../assets/images/catalog_images/cerberus-flashlight.png';
@@ -28,4 +28,3 @@ const FeaturedProducts = () => (
 );
 
 export default FeaturedProducts;
-
