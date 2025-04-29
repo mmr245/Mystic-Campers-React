@@ -1,5 +1,4 @@
 import React from 'react';
-// Import product images
 import babaYaga from '../../assets/images/catalog_images/baba-yaga-cookset.png';
 import banshee from '../../assets/images/catalog_images/banshee-repel.png';
 import cerberus from '../../assets/images/catalog_images/cerberus-flashlight.png';
@@ -14,7 +13,7 @@ const featuredProducts = [
 
 const FeaturedProducts = () => (
   <div className="featured-products">
-    <h2>Our picks for you</h2>
+    {/* Removed duplicate h2 here */}
     <div className="product-row">
       {featuredProducts.map((product) => (
         <div key={product.id} className="product-card">
