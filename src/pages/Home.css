@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #f0f0dc; /* light background color for contrast */
-  color: #222; /* default text color */
+  background-color: #f0f0dc; /* light background */
+  color: #222;
 }
 
 /* Carousel styles */
@@ -15,7 +15,6 @@
   margin-bottom: 20px;
 }
 
-/* Each slide (only one visible at a time) */
 .slide {
   width: 100%;
   position: absolute;
@@ -29,10 +28,10 @@
   max-height: 400px;
   object-fit: cover;
   display: block;
-  border-bottom: 5px solid #b8a454; /* matching your header border style */
+  border-bottom: 5px solid #b8a454;
 }
 
-/* Dots navigation below the carousel */
+/* Dots navigation */
 .dots {
   text-align: center;
   margin-top: 10px;
@@ -51,10 +50,10 @@
 
 .dot.active,
 .dot:hover {
-  background-color: #fdd059; /* highlight color for active dot */
+  background-color: #fdd059;
 }
 
-/* Welcome message section */
+/* Welcome section styles */
 .welcome-section {
   text-align: center;
   margin-bottom: 40px;
@@ -75,14 +74,13 @@
   cursor: pointer;
   margin-top: 10px;
   text-decoration: none;
-  display: inline-block; /* ensure button styling works well */
 }
 
 .cta-button:hover {
-  background-color: #e0b849; /* slightly darker on hover */
+  background-color: #e0b849;
 }
 
-/* Recommended products section */
+/* Featured products styles */
 .recommended-section {
   margin-top: 20px;
 }
@@ -130,5 +128,6 @@
   font-size: 1em;
   color: #fdd059;
 }
+
 
 
