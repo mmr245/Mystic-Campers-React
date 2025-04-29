@@ -1,69 +1,63 @@
 .home-container {
-  
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 100vh; /* full viewport height */
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0dc;
   color: #222;
 }
 
-/* Banner styles */
-.banner-carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 20px;
+/* Half sections: top and bottom */
+.half {
+  flex: 1; /* each takes half the height */
+  display: flex;
+  flex-direction: column;
 }
-.slide {
+
+/* Top half: Carousel fills entire area */
+.top-half {
+  /* no extra styling needed, flex handles height */
+}
+
+.banner-carousel {
+  flex: 1; /* fill entire top half */
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Make images fill the area */
+.banner-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill without distortion */
+  display: block;
+}
+
+/* Optional overlay content inside top half */
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-.slide img {
   width: 100%;
-  max-height: 600px;
-  object-fit: cover;
-  display: block;
-  border-bottom: 5px solid #b8a454;
-}
-
-/* Dots navigation styles */
-.dots {
-  text-align: center;
-  margin-top: 10px;
-}
-.dot {
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
-  background-color: #bbb;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.dot.active,
-.dot:hover {
-  background-color: #fdd059;
-}
-
-/* Hero section styles */
-.hero-section {
-  background-color: #77a290;
-  padding: 40px 20px;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.3); /* contrast overlay */
   color: #fff;
-  margin-bottom: 40px;
-  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
 }
-.hero-section h1 {
+
+.hero-overlay h1 {
   font-size: 2.5em;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
-.hero-section p {
+.hero-overlay p {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
@@ -76,14 +70,19 @@
   font-size: 1em;
   text-decoration: none;
 }
-.cta-button:hover {
-  background-color: #e0b849;
+
+/* Bottom half: featured products */
+.bottom-half {
+  /* fills bottom space */
+  padding: 20px;
+  overflow-y: auto; /* scroll if needed */
 }
 
-/* Featured products styles */
 .recommended-section {
-  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .recommended-section h2 {
   text-align: center;
   margin-bottom: 20px;
