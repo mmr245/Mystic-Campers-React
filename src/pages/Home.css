@@ -1,4 +1,5 @@
 .home-container {
+  
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
@@ -7,7 +8,7 @@
   color: #222;
 }
 
-/* Carousel styles */
+/* Banner styles */
 .banner-carousel {
   position: relative;
   width: 100%;
@@ -29,7 +30,7 @@
   border-bottom: 5px solid #b8a454;
 }
 
-/* Dots navigation */
+/* Dots navigation styles */
 .dots {
   text-align: center;
   margin-top: 10px;
@@ -48,7 +49,8 @@
 .dot:hover {
   background-color: #fdd059;
 }
-/*Hero Section Styles*/
+
+/* Hero section styles */
 .hero-section {
   background-color: #77a290;
   padding: 40px 20px;
@@ -57,17 +59,14 @@
   margin-bottom: 40px;
   border-radius: 8px;
 }
-
 .hero-section h1 {
   font-size: 2.5em;
   margin-bottom: 15px;
 }
-
 .hero-section p {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
-
 .cta-button {
   background-color: #fdd059;
   color: #1d2429;
@@ -76,9 +75,7 @@
   font-weight: bold;
   font-size: 1em;
   text-decoration: none;
-  display: inline-block;
 }
-
 .cta-button:hover {
   background-color: #e0b849;
 }
