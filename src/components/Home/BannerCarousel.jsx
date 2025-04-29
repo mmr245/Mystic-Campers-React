@@ -1,6 +1,5 @@
 import React, {useState, useEffect
 } from 'react' ; 
-
 const banners = [
   { id: 1, src: '../../assets/images/bigfoot-banner.jpg', alt: 'Bigfoot Banner' },
   { id: 2, src: '../../assets/images/bigfoot-camp-banner.jpg', alt: 'Bigfoot Camp Banner' },
@@ -16,7 +15,7 @@ const BannerCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % banners.length);
-    }, 3000); // change every 3 seconds
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -50,4 +49,5 @@ const BannerCarousel = () => {
 };
 
 export default BannerCarousel;
+
 
