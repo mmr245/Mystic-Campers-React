@@ -1,35 +1,26 @@
 import React from 'react';
+// Import your product images
+import babaYaga from '../../assets/images/catalog_images/baba-yaga-cookset.png';
+import banshee from '../../assets/images/catalog_images/banshee-repel.png';
+import cerberus from '../../assets/images/catalog_images/cerberus-flashlight.png';
+import chup from '../../assets/images/catalog_images/chup-repel.png';
 
-const products = [
-  {
-    id: 1,
-    name: 'Camper Tent',
-    image: '../../assets/images/products/tent.jpg',
-    description: 'A durable tent for all weather conditions.',
-  },
-  {
-    id: 2,
-    name: 'Camping Stove',
-    image: '../../assets/images/products/stove.jpg',
-    description: 'Portable stove for cooking outdoors.',
-  },
-  {
-    id: 3,
-    name: 'Sleeping Bag',
-    image: '../../assets/images/products/sleeping_bag.jpg',
-    description: 'Stay warm on cold nights.',
-  },
+const featuredProducts = [
+  { id: 1, name: 'Baba Yaga Cookset', price: '$45.00', image: babaYaga },
+  { id: 2, name: 'Banshee Reppel', price: '$24.00', image: banshee },
+  { id: 3, name: 'Cerberus Flashlight', price: '$35.00', image: cerberus },
+  { id: 4, name: 'Chup Reppel', price: '$22.00', image: chup },
 ];
 
 const FeaturedProducts = () => (
   <div className="featured-products">
-    <h2>Featured Products</h2>
-    <div className="product-grid">
-      {products.map((product) => (
+    <h2>Our picks for you</h2>
+    <div className="product-row">
+      {featuredProducts.map((product) => (
         <div key={product.id} className="product-card">
           <img src={product.image} alt={product.name} />
           <h3>{product.name}</h3>
-          <p>{product.description}</p>
+          <p>{product.price}</p>
         </div>
       ))}
     </div>
@@ -37,3 +28,4 @@ const FeaturedProducts = () => (
 );
 
 export default FeaturedProducts;
+
