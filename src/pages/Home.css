@@ -3,19 +3,58 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #f0f0dc; /* light background */
+  background-color: #f0f0dc; /* light background color for contrast */
+  color: #222; /* default text color */
 }
 
-/* Banner styling (assuming Banner.jsx is set up) */
-.banner img {
+/* Carousel styles */
+.banner-carousel {
+  position: relative;
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 20px;
 }
 
-/* Welcome section */
+/* Each slide (only one visible at a time) */
+.slide {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 5px solid #b8a454; /* matching your header border style */
+}
+
+/* Dots navigation below the carousel */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #fdd059; /* highlight color for active dot */
+}
+
+/* Welcome message section */
 .welcome-section {
   text-align: center;
   margin-bottom: 40px;
@@ -35,13 +74,15 @@
   font-size: 1em;
   cursor: pointer;
   margin-top: 10px;
+  text-decoration: none;
+  display: inline-block; /* ensure button styling works well */
 }
 
 .cta-button:hover {
-  background-color: #e0b849;
+  background-color: #e0b849; /* slightly darker on hover */
 }
 
-/* Recommended products row */
+/* Recommended products section */
 .recommended-section {
   margin-top: 20px;
 }
@@ -49,6 +90,7 @@
 .recommended-section h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 1.8em;
 }
 
 .product-row {
@@ -60,20 +102,21 @@
 
 .product-card {
   background-color: #333;
+  padding: 10px;
   border-radius: 8px;
   width: 200px;
-  padding: 10px;
   color: #fff;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .product-card img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 4px;
   margin-bottom: 10px;
 }
@@ -87,4 +130,5 @@
   font-size: 1em;
   color: #fdd059;
 }
+
 
