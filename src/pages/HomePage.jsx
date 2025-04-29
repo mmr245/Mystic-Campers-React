@@ -1,10 +1,13 @@
+
 import React from 'react';
-import Banner from '../components/Home/Banner';
+import BannerCarousel from '../components/Home/BannerCarousel';
 import FeaturedProducts from '../components/Home/FeaturedProducts';
-import './Home.css'; // import custom styles for homepage
+import './Home.css';
 
 const HomePage = () => {
   return (
+    <div className="home-container">
+      <BannerCarousel />
     <div className="home-container">
       <Banner />
       <section className="welcome-section">
@@ -44,6 +47,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+    </div>
+  );
+};
     </div>
   );
 };
