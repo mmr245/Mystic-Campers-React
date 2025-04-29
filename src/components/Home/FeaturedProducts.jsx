@@ -1,4 +1,5 @@
 import React from 'react';
+// Import your product images
 import babaYaga from '../../assets/images/catalog_images/baba-yaga-cookset.png';
 import banshee from '../../assets/images/catalog_images/banshee-repel.png';
 import cerberus from '../../assets/images/catalog_images/cerberus-flashlight.png';
@@ -13,15 +14,13 @@ const featuredProducts = [
 
 const FeaturedProducts = () => (
   <div className="featured-products">
-    <div className="product-row">
-      {featuredProducts.map((product) => (
-        <div key={product.id} className="product-card">
-          <img src={product.image} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>{product.price}</p>
-        </div>
-      ))}
-    </div>
+    {featuredProducts.map((product) => (
+      <div key={product.id} className="product-card">
+        <img src={product.image} alt={product.name} />
+        <h3>{product.name}</h3>
+        <p>{product.price}</p>
+      </div>
+    ))}
   </div>
 );
 
