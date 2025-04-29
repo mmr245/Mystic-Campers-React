@@ -1,12 +1,19 @@
 import React, {useState, useEffect
 } from 'react' ; 
+import banner1 from '../../assets/images/banner/bigfoot-banner.jpg';
+import banner2 from '../../assets/images/banner/bigfoot-camp-banner.jpg';
+import banner3 from '../../assets/images/banner/canoe-banner.jpg';
+import banner4 from '../../assets/images/banner/findadventure-banner.jpg';
+import banner5 from '../../assets/images/banner/notdeer-banner.jpg';
+import banner6 from '../../assets/images/banner/wendingo-banner.jpg';
+
 const banners = [
-  { id: 1, src: '../../assets/images/banner/bigfoot-banner.jpg', alt: 'Bigfoot Banner' },
-  { id: 2, src: '../../assets/images/banner/bigfoot-camp-banner.jpg', alt: 'Bigfoot Camp Banner' },
-  { id: 3, src: '../../assets/images/banner/canoe-banner.jpg', alt: 'Canoe Banner' },
-  { id: 4, src: '../../assets/images/banner/findadventure-banner.jpg', alt: 'Find Adventure Banner' },
-  { id: 5, src: '../../assets/images/banner/notdeer-banner.jpg', alt: 'Not Deer Banner' },
-  { id: 6, src: '../../assets/images/banner/wendingo-banner.jpg', alt: 'Wendingo Banner' },
+  { id: 1, src: banner1, alt: 'Bigfoot Banner' },
+  { id: 2, src: banner2, alt: 'Bigfoot Camp Banner' },
+  { id: 3, src: banner3, alt: 'Canoe Banner' },
+  { id: 4, src: banner4, alt: 'Find Adventure Banner' },
+  { id: 5, src: banner5, alt: 'Not Deer Banner' },
+  { id: 6, src: banner6, alt: 'Wendingo Banner' },
 ];
 
 const BannerCarousel = () => {
@@ -49,4 +56,3 @@ const BannerCarousel = () => {
 };
 
 export default BannerCarousel;
-
