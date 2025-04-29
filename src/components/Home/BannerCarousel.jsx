@@ -1,5 +1,6 @@
 import React, {useState, useEffect
 } from 'react' ; 
+// Import images
 import banner1 from '../../assets/images/banner/bigfoot-banner.jpg';
 import banner2 from '../../assets/images/banner/bigfoot-camp-banner.jpg';
 import banner3 from '../../assets/images/banner/canoe-banner.jpg';
@@ -26,9 +27,7 @@ const BannerCarousel = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
+  const goToSlide = (index) => setCurrentIndex(index);
 
   return (
     <div className="banner-carousel">
