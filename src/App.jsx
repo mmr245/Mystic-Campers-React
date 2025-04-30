@@ -7,6 +7,8 @@ import Home from './pages/HomePage';
 import Header from './components/Layout/Header';
 import Shop from './pages/ShopPage';
 import About from './pages/AboutPage';
+import Lore from './pages/Lore';
+import Team from './pages/Team';
 import Hunt from './pages/HuntPage';
 import Contact from './pages/ContactPage';
 import Account from './pages/AccountPage';
@@ -19,8 +21,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/hunt" element={<Hunt />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/hunt" element={<Hunt />} />
+        <Route path="/lore" element={<Lore />} />
+        <Route path="/team" element={<Team />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
