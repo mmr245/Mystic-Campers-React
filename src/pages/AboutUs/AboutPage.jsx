@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BigfootTent from '../assets/images/banner/bigfoot-camp-banner.jpg';
-import BigfootBook from '../assets/images/decorative/lore2.png';
-import MonsterTeam from '../assets/images/decorative/team2.png';
+import BigfootTent from '../../assets/images/banner/bigfoot-camp-banner.jpg';
+import BigfootBook from '../../assets/images/decorative/lore2.png';
+import MonsterTeam from '../../assets/images/decorative/team2.png';
 
 
 const About = () => {

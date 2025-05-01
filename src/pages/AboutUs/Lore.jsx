@@ -1,5 +1,5 @@
 import React from 'react';
-import CanoeBanner from '../assets/images/banner/canoe-banner.jpg';
+import CanoeBanner from '../../assets/images/banner/canoe-banner.jpg';
 
 const Lore = () => {
   return (
