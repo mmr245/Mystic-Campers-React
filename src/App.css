@@ -202,10 +202,10 @@ button {
 }
 
 /* ----- Product Grids & Cards ---- */
-
 /* 1. Featured on home page */
 .featured-grid {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding: 1rem;
@@ -242,4 +242,38 @@ button {
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 0.75rem;
+}
+
+.mobile-shop {
+  display: block !important;
+  justify-self: center;
+  margin: 2em;
+}
+
+.featured-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+
+/* Desktop breakpoint: switch logos and branding */
+@media (min-width: 768px) {
+  .hidden {
+    display: block !important;
+  }
+
+  .mobile-shop {
+    display: none !important;
+  }
+
+  .featured-section {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0 auto;
+  }
 }
