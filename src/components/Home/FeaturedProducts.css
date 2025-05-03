@@ -1,0 +1,50 @@
+/* 1. Make the container a responsive grid */
+.featured-grid {
+    display: grid;
+    /* auto-fill as many 250px columns as fit, each flexing to fill */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    /* space between cards */
+    padding: 2rem;
+    /* outer breathing room */
+}
+
+/* 2. Style each product card */
+.product-card {
+    background-color: #fff;
+    /* white background */
+    color: #1d2429;
+    /* dark text */
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* 3. Make cards lift on hover */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Ensure images scale nicely */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+/* 5. Tweak headings and price */
+.product-card h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.125rem;
+}
+
+.product-card p {
+    margin: 0 0 0.75rem;
+    font-weight: bold;
+}
