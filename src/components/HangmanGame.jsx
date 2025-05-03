@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { wordOptions } from '../data/words.js';
 import './HangmanGame.css';
-
-const wordOptions = [
-  { word: 'oracle', hint: 'A mystical prophet who foresees the future.' },
-  { word: 'crystal', hint: 'A gemstone often used in mystical practices.' },
-  // add additional words & hints here
-];
 
 const HangmanGame = () => {
   const [selected, setSelected] = useState(null);
@@ -16,7 +11,9 @@ const HangmanGame = () => {
   const [status, setStatus] = useState('playing');
 
   useEffect(() => {
-    const choice = wordOptions[Math.floor(Math.random() * wordOptions.length)];
+    const choice = wordOptions[
+      Math.floor(Math.random() * wordOptions.length)
+    ];
     setSelected(choice);
     setDisplayed(Array(choice.word.length).fill('_'));
   }, []);
