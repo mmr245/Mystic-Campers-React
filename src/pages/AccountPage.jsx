@@ -1,7 +1,12 @@
+import LoginForm from "../components/About/LoginForm";
+import SignUpForm from "../components/About/SignUpForm";
+import React, { useState } from "react";
+
 const AccountPage = () => (
     <div>
       <h1>Account</h1>
-      <p>Manage your account settings.</p>
+      <LoginForm />
+      <SignUpForm />
     </div>
   );
   

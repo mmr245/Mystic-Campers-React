@@ -244,6 +244,16 @@ button {
   margin-bottom: 0.75rem;
 }
 
+/* unclicked (unvisited) links */
+.product-card a:link {
+  color: #f5f5f5;
+}
+
+/* clicked (visited) links */
+.product-card a:visited {
+  color: #633f85;
+}
+
 .mobile-shop {
   display: block !important;
   justify-self: center;
