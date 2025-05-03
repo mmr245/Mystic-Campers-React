@@ -23,12 +23,12 @@ const Header = () => (
     </div>
     <nav className="nav-links">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/shop">Shop</a></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/shop">Shop</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/hunt">The Hunt</NavLink></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/account">Account</a></li>
+        <li><NavLink to="/contact">Contact</NavLink></li>
+        <li><NavLink to="/account">Account</NavLink></li>
         <li>
           <NavLink to="/cart" className={({ isActive }) => isActive ? 'active' : ''}>
             Cart
