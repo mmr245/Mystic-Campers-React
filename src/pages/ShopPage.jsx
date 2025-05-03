@@ -1,34 +1,30 @@
 import React, { useState, useMemo } from 'react';
+import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
 
-// Example product prop shape: { id, name, price, category, imageUrl }
-export default function ShoppingPage({ products }) {
+export default function ShoppingPage() {
+  const allProducts = products;
   const [categoryFilter, setCategoryFilter] = useState('All');
-  const [priceFilter, setPriceFilter] = useState({ min: 0, max: 1000 });
+  const [priceFilter, setPriceFilter] = useState({ min: 0, max: Infinity });
 
-  // Derive list of unique categories
-  const categories = useMemo(() => [
-    'All',
-    ...Array.from(new Set(products.map((p) => p.category)))
-  ], [products]);
+  const categories = useMemo(
+    () => ['All', ...new Set(allProducts.map((p) => p.category))],
+    [allProducts]
+  );
 
-  // Filter products by category and price
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
-      const matchesCategory =
-        categoryFilter === 'All' || product.category === categoryFilter;
-      const matchesPrice =
-        product.price >= priceFilter.min && product.price <= priceFilter.max;
-      return matchesCategory && matchesPrice;
-    });
-  }, [products, categoryFilter, priceFilter]);
+  const filteredProducts = useMemo(
+    () =>
+      allProducts.filter(({ price, category }) => {
+        const matchesCategory = categoryFilter === 'All' || category === categoryFilter;
+        return typeof price === 'number' && price >= priceFilter.min && price <= priceFilter.max && matchesCategory;
+      }),
+    [allProducts, categoryFilter, priceFilter]
+  );
 
-  // Handler for price inputs
-  const handlePriceChange = (e) => {
-    const { name, value } = e.target;
+  const handlePriceChange = ({ target: { name, value } }) => {
     setPriceFilter((prev) => ({
       ...prev,
-      [name]: Number(value)
+      [name]: value === '' ? (name === 'min' ? 0 : Infinity) : Number(value)
     }));
   };
 
@@ -54,7 +50,7 @@ export default function ShoppingPage({ products }) {
             <input
               type="number"
               name="min"
-              value={priceFilter.min}
+              value={priceFilter.min === 0 ? '' : priceFilter.min}
               onChange={handlePriceChange}
               placeholder="Min"
               className="w-20 p-2 border rounded"
@@ -63,7 +59,7 @@ export default function ShoppingPage({ products }) {
             <input
               type="number"
               name="max"
-              value={priceFilter.max}
+              value={priceFilter.max === Infinity ? '' : priceFilter.max}
               onChange={handlePriceChange}
               placeholder="Max"
               className="w-20 p-2 border rounded"
@@ -72,10 +68,16 @@ export default function ShoppingPage({ products }) {
         </div>
       </div>
 
-      <div className="product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="product-grid">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              imgSrc={product.image}
+            />
           ))
         ) : (
           <p>No products match your filters.</p>
