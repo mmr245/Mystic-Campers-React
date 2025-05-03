@@ -1,41 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import './HangmanGame.css';
 
-interface WordOption {
-  word: string;
-  hint: string;
-}
-
-const wordOptions: WordOption[] = [
+const wordOptions = [
   { word: 'oracle', hint: 'A mystical prophet who foresees the future.' },
   { word: 'crystal', hint: 'A gemstone often used in mystical practices.' },
   // add additional words & hints here
 ];
 
-const HangmanGame: React.FC = () => {
-  const [selected, setSelected] = useState<WordOption | null>(null);
-  const [displayed, setDisplayed] = useState<string[]>([]);
-  const [wrongGuesses, setWrongGuesses] = useState<string[]>([]);
+const HangmanGame = () => {
+  const [selected, setSelected] = useState(null);
+  const [displayed, setDisplayed] = useState([]);
+  const [wrongGuesses, setWrongGuesses] = useState([]);
   const [guessInput, setGuessInput] = useState('');
   const [fullGuess, setFullGuess] = useState('');
-  const [status, setStatus] = useState<'playing' | 'won' | 'lost'>('playing');
+  const [status, setStatus] = useState('playing');
 
   useEffect(() => {
-    // pick random word on mount
     const choice = wordOptions[Math.floor(Math.random() * wordOptions.length)];
     setSelected(choice);
     setDisplayed(Array(choice.word.length).fill('_'));
   }, []);
 
-  const handleLetterGuess = (e: React.FormEvent) => {
+  const handleLetterGuess = (e) => {
     e.preventDefault();
     if (!selected || status !== 'playing') return;
     const letter = guessInput.toLowerCase();
     setGuessInput('');
 
     if (selected.word.includes(letter)) {
-      // reveal letter positions
-      const updated = displayed.map((ch, i) => selected.word[i] === letter ? letter : ch);
+      const updated = displayed.map((ch, i) =>
+        selected.word[i] === letter ? letter : ch
+      );
       setDisplayed(updated);
       if (!updated.includes('_')) setStatus('won');
     } else {
@@ -44,9 +39,10 @@ const HangmanGame: React.FC = () => {
     }
   };
 
-  const handleFullGuess = (e: React.FormEvent) => {
+  const handleFullGuess = (e) => {
     e.preventDefault();
     if (!selected || status !== 'playing') return;
+
     if (fullGuess.toLowerCase() === selected.word) {
       setDisplayed(selected.word.split(''));
       setStatus('won');
@@ -64,31 +60,29 @@ const HangmanGame: React.FC = () => {
       <h2>Mystic Hangman</h2>
       <p className="hint">Hint: {selected.hint}</p>
       <p className="word">{displayed.join(' ')}</p>
-      <p className="wrong-guesses">
-        Wrong: {wrongGuesses.join(', ')}
-      </p>
+      <p className="wrong-guesses">Wrong: {wrongGuesses.join(', ')}</p>
 
       {status === 'playing' && (
         <>
-          <form onSubmit={handleLetterGuess}>
+          <form onSubmit={handleLetterGuess} className="form-wrapper">
             <label>
               Guess Letter:
               <input
                 maxLength={1}
                 value={guessInput}
-                onChange={e => setGuessInput(e.target.value.toLowerCase())}
+                onChange={(e) => setGuessInput(e.target.value.toLowerCase())}
                 required
               />
             </label>
             <button type="submit">Guess</button>
           </form>
 
-          <form onSubmit={handleFullGuess}>
+          <form onSubmit={handleFullGuess} className="form-wrapper">
             <label>
               Guess Word:
               <input
                 value={fullGuess}
-                onChange={e => setFullGuess(e.target.value)}
+                onChange={(e) => setFullGuess(e.target.value)}
                 required
               />
             </label>
@@ -97,8 +91,12 @@ const HangmanGame: React.FC = () => {
         </>
       )}
 
-      {status === 'won' && <p className="result">🎉 You won! The word was {selected.word}.</p>}
-      {status === 'lost' && <p className="result">😞 You lost. The word was {selected.word}.</p>}
+      {status === 'won' && (
+        <p className="result">🎉 You won! The word was {selected.word}.</p>
+      )}
+      {status === 'lost' && (
+        <p className="result">😞 You lost. The word was {selected.word}.</p>
+      )}
 
       <button onClick={() => window.location.reload()}>Play Again</button>
     </div>

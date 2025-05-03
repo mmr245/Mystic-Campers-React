@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import FindAdventure from '../../assets/images/banner/findadventure-banner.jpg';
 import Wallowa600 from '../../assets/images/blog/wallowa600.jpg';
 import FairyRing600 from '../../assets/images/blog/fairyring600.jpg';
-import Game from './Game';
+import { NavLink } from 'react-router-dom';
 
 
 const Hunt = () => {
@@ -37,7 +37,9 @@ const Hunt = () => {
                     <div className="card">
                         <h3 className='header-text'>Cryptid Hangman</h3>
                         <p className="body-text">Try out our cryptid themed hangman game!</p>
-                        
+                        <NavLink to="/game" className="cta-button">
+                          Play Now
+                        </NavLink>
                     </div>
 
                     <div className="card">

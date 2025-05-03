@@ -16,6 +16,7 @@ import TheNightItStarted from './pages/TheHunt/Blog/TheNightItStarted';
 import Contact from './pages/ContactPage';
 import Account from './pages/AccountPage';
 import Cart from './pages/CartPage';
+import Game from './pages/TheHunt/GamePage';
 import NotFound from './pages/NotFoundPage';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/hunt" element={<Hunt />} />
         <Route path="/lore" element={<Lore />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/game" element={<Game />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
