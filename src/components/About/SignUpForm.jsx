@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AuthForms.css';
 
 const SignUpForm = ({ onSignUp }) => {
   const [username, setUsername] = useState('');
@@ -11,7 +12,7 @@ const SignUpForm = ({ onSignUp }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-wrapper">
       <h2>Sign Up</h2>
       <label>
         Username

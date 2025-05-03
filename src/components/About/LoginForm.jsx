@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AuthForms.css';
 
 const LoginForm = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -11,7 +12,7 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-wrapper">
       <h2>Log In</h2>
       <label>
         Email

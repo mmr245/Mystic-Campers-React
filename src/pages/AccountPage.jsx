@@ -8,7 +8,7 @@ const AccountPage = () => {
   return (
     <div className="account-page">
       <h1>Account</h1>
-      <p>Log in to manage your account settings and preferences. Or sign up to </p>
+      <p>Log in to manage your account settings and preferences. Or sign up to get started with Mystic Campers.</p>
       {!mode ? (
         <div className="cta-group">
           <button className="cta-button" onClick={() => setMode('login')}>
