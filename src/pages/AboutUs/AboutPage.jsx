@@ -8,9 +8,7 @@ import MonsterTeam from '../../assets/images/decorative/team2.png';
 const About = () => {
   return (
     <>
-        <div className='banner'>
-            <img src={BigfootTent} alt="Bigfoot walking through forest near a tent" />
-        </div>
+        <img src={BigfootTent} className= "banner" alt="Bigfoot walking through forest near a tent" />
         
         <section>
             <h1 className="header-text">About Mystic Campers</h1>
@@ -20,13 +18,13 @@ const About = () => {
         <section className='aboutgrid'>
             <div className="about">
                 <img src={BigfootBook} className='about' alt="Bigfoot reading a book" />
-                <h2><Link to="/lore">Our Lore</Link></h2>
+                <h2 className='txtlink'><Link to="/lore">Our Lore</Link></h2>
                 <p className="body-text">Discover the legends that inspire our gear. From Bigfoot’s hidden trails to the glowing eyes in the
                     dark, our products are crafted with stories in mind.</p>
             </div>
             <div className="about">
                 <img src={MonsterTeam} className='about' alt="Bigfoot, Mothman, and Wendigo together" />
-                <h2><Link to="/team">Meet The Team</Link></h2>
+                <h2 className='txtlink'><Link to="/team">Meet The Team</Link></h2>
                 <p className="body-text">Get to know the explorers, designers, and cryptid hunters behind Mystic Campers.</p>
             </div>
         </section>

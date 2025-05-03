@@ -1,6 +1,6 @@
 // src/components/Cart/CartList.jsx
 import React from 'react';
-import CartItem from '../Cart/CartItem';
+import CartItem from '../cart/CartItem';
 
 /**
  * Renders a list of cart items.
