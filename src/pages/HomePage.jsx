@@ -17,11 +17,9 @@ const HomePage = () => (
     </div>
 
     {/* Bottom half: our picks */}
-    <div className="half bottom-half">
+    <div>
       <h2>Our picks for you</h2>
-      <div className="product-row">
-        <FeaturedProducts />
-      </div>
+      <FeaturedProducts />
     </div>
   </div>
 );
