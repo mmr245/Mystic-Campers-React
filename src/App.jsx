@@ -4,7 +4,6 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/HomePage'; 
-import Header from './components/Layout/Header';
 import Shop from './pages/ShopPage';
 import About from './pages/AboutUs/AboutPage';
 import Lore from './pages/AboutUs/Lore';
@@ -24,11 +23,14 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/brushwiththewendingo" element={<BrushWithTheWendingo />} />
         <Route path="/intotheunknown" element={<IntoTheUnknown />} />
         <Route path="/thenightitstarted" element={<TheNightItStarted />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/account" element={<Account />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/hunt" element={<Hunt />} />
         <Route path="/lore" element={<Lore />} />

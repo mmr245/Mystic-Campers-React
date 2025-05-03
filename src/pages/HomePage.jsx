@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Home.css';
 
 import BannerCarousel from '../components/Home/BannerCarousel';
@@ -12,7 +13,9 @@ const HomePage = () => (
       <div className="hero">
         <h1>Explore the Unknown with Mystic Campers</h1>
         <p>Gear up for your next adventure with our top camping gear.</p>
-        <a href="/pages/ShopPage.jsx" className="cta-button">Shop Now</a>
+        <NavLink to="/shop" className="cta-button">
+          Shop Now
+        </NavLink>
       </div>
     </div>
 
@@ -25,4 +28,3 @@ const HomePage = () => (
 );
 
 export default HomePage;
-
