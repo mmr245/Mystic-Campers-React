@@ -25,7 +25,7 @@ const About = () => {
                     dark, our products are crafted with stories in mind.</p>
             </div>
             <div className="about">
-                <img src={MonsterTeam} className='about' alt="Bigfoot, Mothman, and Wendingo together" />
+                <img src={MonsterTeam} className='about' alt="Bigfoot, Mothman, and Wendigo together" />
                 <h2><Link to="/team">Meet The Team</Link></h2>
                 <p className="body-text">Get to know the explorers, designers, and cryptid hunters behind Mystic Campers.</p>
             </div>
