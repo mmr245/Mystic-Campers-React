@@ -187,6 +187,24 @@ button {
   padding: 5px;
 }
 
+/*------- How To Play ------- */
+.bullet-list {
+  padding-left: 40px; /* Adjusts indentation */
+}
+
+.bullet-list li {
+  margin-bottom: 16px; /* Adds spacing */
+}
+
+.check-list {
+  list-style-type: "✅ "; /* Uses the checkmark as a bullet */
+  padding-left: 40px; /* Adjusts indentation */
+}
+
+.check-list li {
+  margin-bottom: 16px; /* Adds spacing */
+}
+
 /*------- The Hunt ------- */
 .card {
   /* Add a card effect for blog articles, Hangman and Scavenger Hunt */
@@ -277,6 +295,7 @@ button {
   cursor: pointer;
   margin: auto;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .scvgr-button a {

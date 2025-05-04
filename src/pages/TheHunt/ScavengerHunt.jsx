@@ -9,7 +9,7 @@ const ScavengerHunt = () => {
         <img src={BigfootBanner} className="banner" alt="silhouette of bigfoot walking through forest"/>
         <h1 className="header-text">Mystic Campers Cryptid Scavenger Hunt: Seek the Legends</h1>
         <p className="body-text">Get ready for the ultimate adventure as you explore some of the most legendary cryptid hotspots in the U.S.! Armed with your gear and curiosity, you’ll follow in the footsteps of Bigfoot, the Mothman, the Wendigo, and more—unraveling their mysteries one clue at a time. Are you brave enough to face the unknown?</p>
-        <NavLink to='/scavengerhunt' className='scvgr-button'>
+        <NavLink to='/howtoplay' className='scvgr-button'>
             How to Play
         </NavLink>
 

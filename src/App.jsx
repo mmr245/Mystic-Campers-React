@@ -9,6 +9,7 @@ import About from './pages/AboutUs/AboutPage';
 import Lore from './pages/AboutUs/Lore';
 import Team from './pages/AboutUs/Team';
 import Hunt from './pages/TheHunt/HuntPage';
+import HowToPlay from './pages/TheHunt/HowToPlay';
 import ScavengerHunt from './pages/TheHunt/ScavengerHunt';
 import Blog from './pages/TheHunt/Blog';
 import BrushWithTheWendingo from './pages/TheHunt/Blog/BrushWithTheWendingo';
@@ -35,6 +36,7 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/hunt" element={<Hunt />} />
+        <Route path="/howtoplay" element={<HowToPlay />} />
         <Route path="/scavengerhunt" element={<ScavengerHunt />} />
         <Route path="/lore" element={<Lore />} />
         <Route path="/team" element={<Team />} />
