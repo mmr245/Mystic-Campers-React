@@ -46,9 +46,9 @@ const Hunt = () => {
                     <div className='card'>
                       <h3 className='header-text'>Scavenger Hunt</h3>
                       <p className='body-text'>Join our community adventure and explore the wilderness with us! Participate in challenges, discover hidden treasures, and win amazing prizes. Get ready for an adventure like no other!</p>
-                      <NavLink to='/game' className='hunt-button'>
-                          Play Now
-                        </NavLink>
+                      <NavLink to='/scavengerhunt' className='hunt-button'>
+                          Join The Hunt
+                      </NavLink>
                     </div>
                 </div>
 

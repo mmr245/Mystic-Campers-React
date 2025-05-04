@@ -223,6 +223,71 @@ button {
   color: #1d2429;
 }
 
+/* ----- Scavenger Hunt ----- */
+.bullet-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+.bullet-text .icon {
+  font-size: 1.2em; /* Adjust size */
+  margin-right: 8px; /* Space between emoji and text */
+  flex-shrink: 0; /* Prevent resizing */
+}
+
+.bullet-text .content {
+  flex: 1;
+}
+
+.column1 {
+  flex: 10%;
+  padding: 10px;
+}
+
+.column1 img {
+  width: 85%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column2 {
+  flex: 75%;
+  padding: 10px;
+  border-bottom: 1px solid #B8A454;
+}
+
+.column2 h3 {
+  color: #fdd059;
+}
+
+.scvgr-button {
+  display: block;
+  margin: auto;
+  width: 30%;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #fdd059;
+  color: #1d2429;
+  border: 1px solid rgba(29, 36, 41, 0.1);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.scvgr-button a {
+  color: #1d2429;
+}
+
+.scvgr-button:hover {
+  background-color: #77a290;
+  color: #1d2429;
+}
+
 /* ---------- Team About  ---------- */
 .teamgrid {
   display: grid;
