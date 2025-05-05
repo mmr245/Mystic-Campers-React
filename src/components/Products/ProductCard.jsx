@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatchCart } from '../../context/CartContext';
 import './Products.css';
 
 export default function ProductCard({ product, id, name, price, imgSrc, onAddToCart }) {
@@ -7,9 +8,11 @@ export default function ProductCard({ product, id, name, price, imgSrc, onAddToC
   const p = product || { id, name, price, image: imgSrc, available: true };
   const { id: productId, name: productName, price: productPrice, image } = p;
   const available = p.available ?? true;
+  const dispatch  = useDispatchCart();  
 
   // handler for adding item into cart state
   const handleAdd = () => {
+    dispatch({ type: 'ADD_ITEM', payload: p });
     if (onAddToCart) onAddToCart(p);
   };
 
