@@ -108,7 +108,7 @@ export default function ShopPage({ products = [] }) {
         </div>
 
         {/* product grid */}
-        <div className="products-grid">
+        <div className="product-grid">
           {filteredProducts.length > 0 ? (
             filteredProducts.map(prod => (
               <ProductCard
