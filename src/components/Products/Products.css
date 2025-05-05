@@ -1,0 +1,111 @@
+/* Container for the whole products page */
+.products-page {
+   display: flex;
+   gap: 2rem;
+   padding: 2rem;
+   background-color: #f9f9f6;
+   min-height: 100vh;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+  /* Filter sidebar */
+ .filter-panel {
+   width: 250px;
+   padding: 1.5rem;
+   background-color: #fff;
+   border-radius: 12px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ }
+  .filter-panel h2 {
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+   color: #2e4a36;
+ }
+  /* Each filter section */
+ .filter-group {
+   margin-bottom: 1.5rem;
+   display: flex;
+   flex-direction: column;
+ }
+  .filter-group label {
+   margin-bottom: 0.5rem;
+   color: #4b6043;
+   font-weight: 600;
+ }
+  /* Dropdown and inputs */
+ .filter-group select,
+ .filter-group input[type="number"] {
+   padding: 0.5rem;
+   border: 1px solid #c8d5c2;
+   border-radius: 8px;
+   font-size: 1rem;
+   background-color: #fdfdfb;
+   color: #333;
+ }
+  /* Price range inputs */
+ .price-inputs {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+ }
+  .price-inputs input {
+   width: 90px;
+ }
+  /* Checkbox style */
+ .filter-group input[type="checkbox"] {
+   margin-right: 0.5rem;
+ }
+  /* Product list container (for your future ProductGrid) */
+ .product-list {
+   flex-grow: 1;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+   gap: 2rem;
+ }
+  /* Example individual product card */
+ .product-card {
+   background-color: #fff;
+   border-radius: 12px;
+   padding: 1rem;
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+   transition: transform 0.2s;
+ }
+  .product-card:hover {
+   transform: translateY(-4px);
+ }
+  .product-card img {
+   width: 100%;
+   border-radius: 8px;
+ }
+  .product-card h3 {
+   margin: 0.5rem 0;
+   font-size: 1.2rem;
+   color: #2e4a36;
+ }
+  .product-card p {
+   color: #666;
+ }
+ .add-to-cart-btn {
+   margin-top: 0.5rem;
+   padding: 0.5rem 1rem;
+   background-color: #4b6043;
+   color: #fff;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-size: 1rem;
+   transition: background-color 0.2s;
+ }
+  .add-to-cart-btn:hover {
+   background-color: #3c4d36;
+ }
+  .add-to-cart-btn:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+ }
+  .out-of-stock {
+   display: inline-block;
+   margin-top: 0.5rem;
+   color: #b0413e;
+   font-weight: 600;
+   font-size: 0.9rem;
+ }
