@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCart, useDispatchCart } from '../context/CartContext'
-import './CartPage.css'      // ← make sure to create/import this
+import './CartPage.css'
 
 export default function CartPage() {
   const { items } = useCart()
@@ -70,7 +70,7 @@ export default function CartPage() {
 
       <button
         className="checkout-btn"           
-        onClick={() => {/* TODO: navigate to checkout this is non functioning rn*/}}  // NEW
+        onClick={() => {/* TODO: navigate to checkout this is non functioning rn*/}}
       >
         Proceed to checkout
       </button>

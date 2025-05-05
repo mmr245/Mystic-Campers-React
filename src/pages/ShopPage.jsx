@@ -1,4 +1,3 @@
-// ShopPage.jsx
 import React, { useState, useMemo } from 'react'
 import ProductCard from '../components/Products/ProductCard'
 import './ShopPage.css';

@@ -7,7 +7,7 @@ import { useCart } from '../../context/CartContext';
 import './Layout.css';
 
 const Header = () => {
-  // 2) call the hook and compute total quantity
+  //call the hook and compute total quantity
   const { items } = useCart();
   const totalQty = items.reduce((sum, i) => sum + i.qty, 0);
 

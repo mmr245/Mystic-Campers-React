@@ -1,4 +1,4 @@
-/* ——— Mobile-First Defaults ——— */
+/* -------- Mobile-First ------- */
 .filters {
     display: flex;
     flex-direction: column;    /* stack groups on mobile */

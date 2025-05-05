@@ -1,4 +1,4 @@
-/* 1) Theme vars (should already live in your global :root): */
+/* 1) Global variables */
 :root {
   --color-dark:   #1d2429;
   --color-beige:  #e5dbca;
@@ -6,21 +6,21 @@
   --color-yellow: #fdd059;
 }
 
-/* 2) Page wrapper */
+/* Page wrapper */
 .cart-page {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* 3) Empty-cart state */
+/* Empty-cart state */
 .empty-cart {
   text-align: center;
   font-style: italic;
   color: var(--color-dark);
 }
 
-/* 4) Item “card” (mobile stacking) */
+/* Item “card” (mobile stacking) */
 .cart-item-card {
   background-color: var(--color-beige);
   border-radius: 8px;
@@ -32,7 +32,7 @@
   margin-bottom: 1rem;
 }
 
-/* 5) Image full-width on mobile */
+/* Image full-width on mobile */
 .cart-item-image {
   border-radius: 4px;
   max-width: 100%;
@@ -40,13 +40,13 @@
   margin-bottom: 0.75rem;
 }
 
-/* 6) Details area */
+/* Details area */
 .cart-item-details {
   display: flex;
   flex-direction: column;
 }
 
-/* 7) Name & price */
+/* Name & price */
 .cart-item-name {
   font-size: 1.1rem;
   font-weight: bold;
@@ -61,7 +61,7 @@
   color: var(--color-green);
 }
 
-/* 8) Qty label & input */
+/* Qty label & input */
 .cart-item-qty {
   margin-bottom: 0.75rem;
 }
@@ -81,7 +81,7 @@
   color: var(--color-dark);
 }
 
-/* 9) Remove button */
+/* Remove button */
 .cart-item-remove {
   align-self: flex-start;
   background-color: var(--color-yellow);
@@ -117,7 +117,7 @@
   margin: 1rem auto 0; /* top margin, auto left/right, no bottom margin */
 }
 
-/* 11) Tablet & up (row layout at 768px) */
+/* Tablet & up (row layout at 768px) */
 @media (min-width: 768px) {
   .cart-item-card {
     flex-direction: row;
