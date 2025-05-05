@@ -18,7 +18,7 @@ import TheNightItStarted from './pages/TheHunt/Blog/TheNightItStarted';
 import Contact from './pages/ContactPage';
 import Account from './pages/AccountPage';
 import Cart from './pages/CartPage';
-import Game from './pages/TheHunt/GamePage';
+import GamePage from './pages/TheHunt/GamePage';
 import NotFound from './pages/NotFoundPage';
 import products from './data/products';
 import ProductDetailPage from './pages/ProductDetailsPage';
@@ -46,7 +46,7 @@ function App() {
         <Route path="/scavengerhunt" element={<ScavengerHunt />} />
         <Route path="/lore" element={<Lore />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/game" element={<Game />} />
+        <Route path="/game" element={<GamePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

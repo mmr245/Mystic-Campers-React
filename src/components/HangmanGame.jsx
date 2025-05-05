@@ -1,103 +1,53 @@
-import React, { useState, useEffect } from 'react';
-import { wordOptions } from '../data/words.js';
-import './HangmanGame.css';
+import React, { useRef, useEffect } from 'react';
+import '../games/game.css';
+import { initGame } from '../games/game.js';
 
-const HangmanGame = () => {
-  const [selected, setSelected] = useState(null);
-  const [displayed, setDisplayed] = useState([]);
-  const [wrongGuesses, setWrongGuesses] = useState([]);
-  const [guessInput, setGuessInput] = useState('');
-  const [fullGuess, setFullGuess] = useState('');
-  const [status, setStatus] = useState('playing');
+export default function HangmanGame() {
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    const choice = wordOptions[
-      Math.floor(Math.random() * wordOptions.length)
-    ];
-    setSelected(choice);
-    setDisplayed(Array(choice.word.length).fill('_'));
+    if (containerRef.current) {
+      initGame(containerRef.current);
+    }
   }, []);
 
-  const handleLetterGuess = (e) => {
-    e.preventDefault();
-    if (!selected || status !== 'playing') return;
-    const letter = guessInput.toLowerCase();
-    setGuessInput('');
-
-    if (selected.word.includes(letter)) {
-      const updated = displayed.map((ch, i) =>
-        selected.word[i] === letter ? letter : ch
-      );
-      setDisplayed(updated);
-      if (!updated.includes('_')) setStatus('won');
-    } else {
-      setWrongGuesses([...wrongGuesses, letter]);
-      if (wrongGuesses.length + 1 >= 6) setStatus('lost');
-    }
-  };
-
-  const handleFullGuess = (e) => {
-    e.preventDefault();
-    if (!selected || status !== 'playing') return;
-
-    if (fullGuess.toLowerCase() === selected.word) {
-      setDisplayed(selected.word.split(''));
-      setStatus('won');
-    } else {
-      setWrongGuesses([...wrongGuesses, fullGuess]);
-      setStatus('lost');
-    }
-    setFullGuess('');
-  };
-
-  if (!selected) return <p>Loading...</p>;
-
   return (
-    <div className="hangman-game">
-      <h2>Mystic Hangman</h2>
-      <p className="hint">Hint: {selected.hint}</p>
-      <p className="word">{displayed.join(' ')}</p>
-      <p className="wrong-guesses">Wrong: {wrongGuesses.join(', ')}</p>
+    <div ref={containerRef} className="hangman-container">
+      <img
+        id="hangman-image"
+        src="/assets/images/hangman/hangman-0.png"
+        alt="Hangman"
+      />
 
-      {status === 'playing' && (
-        <>
-          <form onSubmit={handleLetterGuess} className="form-wrapper">
-            <label>
-              Guess Letter:
-              <input
-                maxLength={1}
-                value={guessInput}
-                onChange={(e) => setGuessInput(e.target.value.toLowerCase())}
-                required
-              />
-            </label>
-            <button type="submit">Guess</button>
-          </form>
+      {/* All the placeholders game.js expects: */}
+      <div id="word"></div>
+      <div id="attempts"></div>
+      <div id="letters-guessed"></div>
+      <div id="hint"></div>
+      <div id="message"></div>
 
-          <form onSubmit={handleFullGuess} className="form-wrapper">
-            <label>
-              Guess Word:
-              <input
-                value={fullGuess}
-                onChange={(e) => setFullGuess(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit">Submit</button>
-          </form>
-        </>
-      )}
+      {/* Hint button */}
+      <div>
+        <button id="hint-btn">Hint</button>
+      </div>
 
-      {status === 'won' && (
-        <p className="result">🎉 You won! The word was {selected.word}.</p>
-      )}
-      {status === 'lost' && (
-        <p className="result">😞 You lost. The word was {selected.word}.</p>
-      )}
+      {/* Full-word guess */}
+      <div>
+        <input
+          id="full-word-input"
+          type="text"
+          placeholder="Guess the full word"
+        />
+        <button id="guess-word-btn">Guess Word</button>
+      </div>
 
-      <button onClick={() => window.location.reload()}>Play Again</button>
+      {/* New Game */}
+      <div>
+        <button id="new-game-btn">New Game</button>
+      </div>
+
+      {/* Clickable letter bank */}
+      <div id="letter-bank"></div>
     </div>
   );
-};
-
-export default HangmanGame;
+}

@@ -1,13 +1,11 @@
 import React from 'react';
-import HangmanGame from '../../components/HangmanGame.jsx';
+import HangmanGame from '../../components/HangmanGame';
 
-const GamePage = () => {
+export default function GamePage() {
   return (
-    <div className="game-page">
-      <h1>Play Mystic Hangman</h1>
+    <div>
+      <h1>Mystic Hangman</h1>
       <HangmanGame />
     </div>
   );
-};
-
-export default GamePage;
+}
