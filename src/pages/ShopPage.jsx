@@ -10,6 +10,18 @@ export default function ShopPage({ products = [] }) {
     setCart(prev => [...prev, product]);
   };
 
+  // Price filter state
+  const [priceFilter, setPriceFilter] = useState({ min: 0, max: Infinity });
+
+  // Update min/max when the inputs change
+  const handlePriceChange = e => {
+    const { name, value } = e.target;
+    setPriceFilter(prev => ({
+      ...prev,
+      [name]: value === '' ? (name === 'min' ? 0 : Infinity) : Number(value)
+    }));
+  };
+
   // Track selected category and search input
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -53,60 +65,62 @@ export default function ShopPage({ products = [] }) {
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
         />
-    <div className="shopping-page p-4">
-      <div className="filters flex gap-4 mb-6">
-        <div>
-          <label htmlFor="category" className="block font-medium">Category</label>
+      </div>
+      <div className="shopping-page p-4">
+        <div className="filters flex gap-4 mb-6">
+          <div>
+            <label htmlFor="category" className="block font-medium">Category</label>
             <div className="px-4">
               <select
                 id="category"
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
                 className="mt-1 p-2 border rounded"
-                >
+              >
                 {categories.map((cat) => (
                   <option key={cat} value={cat}>{cat}</option>
                 ))}
               </select>
             </div>
-        </div>
-        <div>
-          <label className="block font-medium">Price Range</label>
-          <div className="flex items-center gap-2 mt-1">
-            <input
-              type="number"
-              name="min"
-              value={priceFilter.min === 0 ? '' : priceFilter.min}
-              onChange={handlePriceChange}
-              placeholder="Min"
-              className="w-20 p-2 border rounded"
-            />
-            <span>-</span>
-            <input
-              type="number"
-              name="max"
-              value={priceFilter.max === Infinity ? '' : priceFilter.max}
-              onChange={handlePriceChange}
-              placeholder="Max"
-              className="w-20 p-2 border rounded"
-            />
+          </div>
+          <div>
+            <label className="block font-medium">Price Range</label>
+            <div className="flex items-center gap-2 mt-1">
+              <input
+                type="number"
+                name="min"
+                value={priceFilter.min === 0 ? '' : priceFilter.min}
+                onChange={handlePriceChange}
+                placeholder="Min"
+                className="w-20 p-2 border rounded"
+              />
+              <span>-</span>
+              <input
+                type="number"
+                name="max"
+                value={priceFilter.max === Infinity ? '' : priceFilter.max}
+                onChange={handlePriceChange}
+                placeholder="Max"
+                className="w-20 p-2 border rounded"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* product grid */}
-      <div className="products-grid">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map(prod => (
-            <ProductCard
-              key={prod.id}
-              product={prod}
-              onAddToCart={handleAddToCart}  // enables the Add to Cart button
-            />
-          ))
-        ) : (
-          <p>No products found.</p>
-        )}
+        {/* product grid */}
+        <div className="products-grid">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map(prod => (
+              <ProductCard
+                key={prod.id}
+                product={prod}
+                onAddToCart={handleAddToCart}  // enables the Add to Cart button
+              />
+            ))
+          ) : (
+            <p>No products found.</p>
+          )}
+        </div>
       </div>
     </div>
   );
