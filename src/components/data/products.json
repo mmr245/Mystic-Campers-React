@@ -1,0 +1,38 @@
+[
+   {
+     "id": 1,
+     "name": "Mystic Camper X1",
+     "category": "Campers",
+     "price": 29999.99,
+     "available": true,
+     "image": "/images/camper-x1.jpg",
+     "description": "The ultimate off-grid adventure camper. Built for rugged wilderness."
+   },
+   {
+     "id": 2,
+     "name": "Adventure Gear Set",
+     "category": "Gear",
+     "price": 499.99,
+     "available": true,
+     "image": "/images/gear-set.jpg",
+     "description": "Complete adventure gear set for hiking, camping, and overlanding."
+   },
+   {
+     "id": 3,
+     "name": "Solar Panel Kit",
+     "category": "Accessories",
+     "price": 899.99,
+     "available": false,
+     "image": "/images/solar-kit.jpg",
+     "description": "Portable solar panels to power your journey wherever you go."
+   },
+   {
+     "id": 4,
+     "name": "Mystic Camper Z3",
+     "category": "Campers",
+     "price": 45999.99,
+     "available": true,
+     "image": "/images/camper-z3.jpg",
+     "description": "Luxury meets durability with the new Z3 off-road model."
+   }
+ ]
