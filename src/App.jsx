@@ -20,13 +20,19 @@ import Account from './pages/AccountPage';
 import Cart from './pages/CartPage';
 import Game from './pages/TheHunt/GamePage';
 import NotFound from './pages/NotFoundPage';
+import products from './data/products';
+import ProductDetailPage from './pages/ProductDetailsPage';
 
 function App() {
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop" element={<Shop products={products} />} />
+        <Route
+          path="/shop/:id"
+          element={<ProductDetailPage products={products} />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/brushwiththewendingo" element={<BrushWithTheWendingo />} />

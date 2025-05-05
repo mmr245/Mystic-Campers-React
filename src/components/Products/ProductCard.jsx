@@ -1,26 +1,29 @@
-// src/components/ProductCard.jsx
-// initialized, by Rachel. Edited by Aj to merge the two existing ProductCard.jsx 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Products.css';
 
 export default function ProductCard({ product, id, name, price, imgSrc, onAddToCart }) {
-  // Support both product prop and individual props
+  // merge product object or individual props, defaulting available to true
   const p = product || { id, name, price, image: imgSrc, available: true };
-  const { id: productId, name: productName, price: productPrice, image, available } = p;
+  const { id: productId, name: productName, price: productPrice, image } = p;
+  const available = p.available ?? true;
 
+  // handler for adding item into cart state
   const handleAdd = () => {
-    if (onAddToCart) {
-      onAddToCart(p);
-    }
+    if (onAddToCart) onAddToCart(p);
   };
 
   return (
     <div className="product-card">
-      <img src={image} alt={productName} />
-      <h3>{productName}</h3>
-      <p>${productPrice.toFixed(2)}</p>
-      {available === false && <span className="out-of-stock">Out of Stock</span>}
+      {/* clicking any part of this link (except the button) goes to product page */}
+      <NavLink to={`/shop/${productId}`} className="card-link">
+        <img src={image} alt={productName} />
+        <h3>{productName}</h3>
+        <p>${productPrice.toFixed(2)}</p>
+        {!available && <span className="out-of-stock">Out of Stock</span>}
+      </NavLink>
+
+      {/* render add-to-cart button or fallback view details */}
       {onAddToCart ? (
         <button
           className="add-to-cart-btn"

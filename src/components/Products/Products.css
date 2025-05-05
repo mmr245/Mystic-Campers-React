@@ -1,111 +1,84 @@
-/* Container for the whole products page */
-.products-page {
-   display: flex;
-   gap: 2rem;
-   padding: 2rem;
-   background-color: #f9f9f6;
-   min-height: 100vh;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- }
-  /* Filter sidebar */
- .filter-panel {
-   width: 250px;
-   padding: 1.5rem;
-   background-color: #fff;
-   border-radius: 12px;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
- }
-  .filter-panel h2 {
-   font-size: 1.5rem;
-   margin-bottom: 1rem;
-   color: #2e4a36;
- }
-  /* Each filter section */
- .filter-group {
-   margin-bottom: 1.5rem;
-   display: flex;
-   flex-direction: column;
- }
-  .filter-group label {
-   margin-bottom: 0.5rem;
-   color: #4b6043;
-   font-weight: 600;
- }
-  /* Dropdown and inputs */
- .filter-group select,
- .filter-group input[type="number"] {
-   padding: 0.5rem;
-   border: 1px solid #c8d5c2;
-   border-radius: 8px;
-   font-size: 1rem;
-   background-color: #fdfdfb;
-   color: #333;
- }
-  /* Price range inputs */
- .price-inputs {
-   display: flex;
-   align-items: center;
-   gap: 0.5rem;
- }
-  .price-inputs input {
-   width: 90px;
- }
-  /* Checkbox style */
- .filter-group input[type="checkbox"] {
-   margin-right: 0.5rem;
- }
-  /* Product list container (for your future ProductGrid) */
- .product-list {
-   flex-grow: 1;
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-   gap: 2rem;
- }
-  /* Example individual product card */
- .product-card {
-   background-color: #fff;
-   border-radius: 12px;
-   padding: 1rem;
-   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-   transition: transform 0.2s;
- }
-  .product-card:hover {
-   transform: translateY(-4px);
- }
-  .product-card img {
-   width: 100%;
-   border-radius: 8px;
- }
-  .product-card h3 {
-   margin: 0.5rem 0;
-   font-size: 1.2rem;
-   color: #2e4a36;
- }
-  .product-card p {
-   color: #666;
- }
- .add-to-cart-btn {
-   margin-top: 0.5rem;
-   padding: 0.5rem 1rem;
-   background-color: #4b6043;
-   color: #fff;
-   border: none;
-   border-radius: 8px;
-   cursor: pointer;
-   font-size: 1rem;
-   transition: background-color 0.2s;
- }
-  .add-to-cart-btn:hover {
-   background-color: #3c4d36;
- }
-  .add-to-cart-btn:disabled {
-   background-color: #ccc;
-   cursor: not-allowed;
- }
-  .out-of-stock {
-   display: inline-block;
-   margin-top: 0.5rem;
-   color: #b0413e;
-   font-weight: 600;
-   font-size: 0.9rem;
- }
+/* ProductCard.css */
+
+:root {
+  --color-dark:   #1d2429;
+  --color-beige:  #e5dbca;
+  --color-green:  #77a290;
+  --color-yellow: #fdd059;
+}
+
+.product-card {
+  background-color: var(--color-beige);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(29, 36, 41, 0.1);
+  color: var(--color-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.product-card img {
+  border-radius: 4px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+}
+
+.product-card p {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: var(--color-green);
+}
+
+/* “Add to Cart” button */
+.add-to-cart-btn {
+  background-color: var(--color-yellow);
+  border: none;
+  border-radius: 4px;
+  color: var(--color-dark);
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover:not(:disabled) {
+  background-color: #e0c64e;
+}
+
+.add-to-cart-btn:disabled {
+  background-color: var(--color-beige);
+  color: var(--color-dark);
+  cursor: not-allowed;
+}
+
+/* Fallback “View Details” link */
+.btn {
+  background-color: var(--color-green);
+  border-radius: 4px;
+  color: var(--color-beige);
+  display: inline-block;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Out-of-stock label */
+.out-of-stock {
+  color: var(--color-yellow);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
