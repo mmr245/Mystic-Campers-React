@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Mystic Campers App",
+  "name": "Mystic Campers React App",
+  "description": "A React application for Mystic Campers",
   "icons": [
     {
       "src": "favicon.ico",
