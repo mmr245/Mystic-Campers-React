@@ -514,6 +514,11 @@ button:hover {
       /* 25% width */
   }
 
+  /* 2. Shop page grid */
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
    /*Team for Tablet*/
    .teamgrid {
     grid-template-columns: repeat(3, 1fr);
