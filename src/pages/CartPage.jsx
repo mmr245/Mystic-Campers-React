@@ -1,37 +1,48 @@
-import { useState, useEffect } from 'react';
-import CartSummary from '../components/cart/CartSummary.jsx';
-import CartList    from '../components/cart/CartList.jsx';
+import { useCart, useDispatchCart } from '../context/CartContext'
 
 export default function CartPage() {
-  const [items, setItems] = useState([]);
+  const { items } = useCart()
+  const dispatch = useDispatchCart()
 
-  useEffect(() => {
-    setItems(JSON.parse(localStorage.getItem('cart') || '[]'));
-  }, []);
+  const updateQty = (id, qty) => {
+    if (qty < 1) return
+    dispatch({ type: 'UPDATE_QTY', payload: { id, qty } })
+  }
 
-  const handleQtyChange = (id, qty) => {
-    const updated = items.map(i => i.id === id ? { ...i, quantity: qty } : i);
-    setItems(updated);
-    localStorage.setItem('cart', JSON.stringify(updated));
-  };
+  const removeItem = id => {
+    dispatch({ type: 'REMOVE_ITEM', payload: { id } })
+  }
 
-  const handleRemove = id => {
-    const updated = items.filter(i => i.id !== id);
-    setItems(updated);
-    localStorage.setItem('cart', JSON.stringify(updated));
-  };
-
-  const total = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  if (items.length === 0) {
+    return <p>Your cart is empty.</p>
+  }
 
   return (
-    <section>
-      <h1>Your Cart</h1>
-      <CartList
-        items={items}
-        onQtyChange={handleQtyChange}
-        onRemove={handleRemove}
-      />
-      <CartSummary total={total} />
-    </section>
-  );
+    <div className="cart-page">
+      {items.map(item => (
+        <div key={item.id} className="cart-item">
+          <span>{item.name}</span>
+          <span>${item.price.toFixed(2)}</span>
+          <input
+            type="number"
+            min="1"
+            value={item.qty}
+            onChange={e => updateQty(item.id, parseInt(e.target.value, 10))}
+          />
+          <button onClick={() => removeItem(item.id)}>
+            Remove
+          </button>
+        </div>
+      ))}
+
+      <hr />
+
+      <p>
+        Total:{' '}
+        {items
+          .reduce((sum, i) => sum + i.price * i.qty, 0)
+          .toFixed(2)}
+      </p>
+    </div>
+  )
 }
