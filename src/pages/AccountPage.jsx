@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LoginForm from '../components/About/LoginForm';
-import SignUpForm from '../components/About/SignUpForm';
+import LoginForm from '../components/Account/LoginForm';
+import SignUpForm from '../components/Account/SignUpForm';
 
 const AccountPage = () => {
   const [mode, setMode] = useState(null); // 'login' | 'signup' | null
@@ -11,10 +11,10 @@ const AccountPage = () => {
       <p>Log in to manage your account settings and preferences. Or sign up to get started with Mystic Campers.</p>
       {!mode ? (
         <div className="cta-group">
-          <button className="cta-button" onClick={() => setMode('login')}>
+          <button className="primary-button" onClick={() => setMode('login')}>
             Log In
           </button>
-          <button className="cta-button" onClick={() => setMode('signup')}>
+          <button className="primary-button" onClick={() => setMode('signup')}>
             Sign Up
           </button>
         </div>
