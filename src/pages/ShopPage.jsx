@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { products } from '../data/products';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/Products/ProductCard';
 
 export default function ShoppingPage() {
   const allProducts = products;

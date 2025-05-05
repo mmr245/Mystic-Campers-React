@@ -1,6 +1,6 @@
 import React from 'react';
 import { products } from '../../data/products';
-import ProductCard from '../ProductCard';
+import ProductCard from '../Products/ProductCard';
 
 export default function FeaturedProducts() {
   // pick the first 4 featured items
