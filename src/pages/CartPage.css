@@ -107,6 +107,16 @@
   margin-top: 1rem;
 }
 
+.empty-cart {
+  font-size: 1.5rem;
+  color: var(--color-yellow);
+}
+
+.checkout-btn {
+  display: block;
+  margin: 1rem auto 0; /* top margin, auto left/right, no bottom margin */
+}
+
 /* 11) Tablet & up (row layout at 768px) */
 @media (min-width: 768px) {
   .cart-item-card {

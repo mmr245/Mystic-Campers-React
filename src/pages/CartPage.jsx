@@ -67,6 +67,13 @@ export default function CartPage() {
           .reduce((sum, i) => sum + i.price * i.qty, 0)
           .toFixed(2)}
       </p>
+
+      <button
+        className="checkout-btn"           
+        onClick={() => {/* TODO: navigate to checkout this is non functioning rn*/}}  // NEW
+      >
+        Proceed to checkout
+      </button>
     </div>
   )
 }
