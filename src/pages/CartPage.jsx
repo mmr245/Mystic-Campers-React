@@ -1,4 +1,6 @@
+import React from 'react'
 import { useCart, useDispatchCart } from '../context/CartContext'
+import './CartPage.css'      // ← make sure to create/import this
 
 export default function CartPage() {
   const { items } = useCart()
@@ -14,30 +16,52 @@ export default function CartPage() {
   }
 
   if (items.length === 0) {
-    return <p>Your cart is empty.</p>
+    return <p className="empty-cart">Your cart is empty.</p>
   }
 
   return (
     <div className="cart-page">
       {items.map(item => (
-        <div key={item.id} className="cart-item">
-          <span>{item.name}</span>
-          <span>${item.price.toFixed(2)}</span>
-          <input
-            type="number"
-            min="1"
-            value={item.qty}
-            onChange={e => updateQty(item.id, parseInt(e.target.value, 10))}
+        <div key={item.id} className="cart-item-card">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="cart-item-image"
           />
-          <button onClick={() => removeItem(item.id)}>
-            Remove
-          </button>
+
+          <div className="cart-item-details">
+            <span className="cart-item-name">{item.name}</span>
+            <span className="cart-item-price">
+              ${item.price.toFixed(2)}
+            </span>
+
+            <div className="cart-item-qty">
+              <label>
+                Qty:
+                <input
+                  type="number"
+                  min="1"
+                  value={item.qty}
+                  onChange={e =>
+                    updateQty(item.id, parseInt(e.target.value, 10))
+                  }
+                />
+              </label>
+            </div>
+
+            <button
+              className="cart-item-remove"
+              onClick={() => removeItem(item.id)}
+            >
+              Remove
+            </button>
+          </div>
         </div>
       ))}
 
       <hr />
 
-      <p>
+      <p className="cart-total">
         Total:{' '}
         {items
           .reduce((sum, i) => sum + i.price * i.qty, 0)

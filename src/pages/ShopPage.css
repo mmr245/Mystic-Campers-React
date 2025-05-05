@@ -57,7 +57,7 @@
   }
   
   /* ——— Tablet & Desktop ——— */
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     .filters {
       flex-direction: row;         /* row layout on larger screens */
       align-items: flex-end;
